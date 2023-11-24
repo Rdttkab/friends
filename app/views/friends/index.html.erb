@@ -15,7 +15,7 @@
     <tbody>
       <% @friends.each do |friend| %>
         <tr>
-          <th scope="row">1</th>
+          <th scope="row"><% friend.id %></th>
           <td><%= friend.first_name %></td>
           <td><%= friend.last_name %></td>
           <td><%= friend.email %></td>
@@ -23,7 +23,7 @@
           <td><%= friend.twitter %></td>
           <td><%= link_to "Show", friend %></td>
           <td><%= link_to "Edit", edit_friend_path(friend) %></td>
-          <td><%= link_to "Distroy", friend, data: { "turbo-method": :delete,confirm: 'Are you sure?' } %></td>
+          <td><%= link_to "Distroy", friend, data: { "turbo-method": :delete, "turbo-confirm": 'Are you sure?' } %></td>
         </tr>
       <% end %>
     </tbody>
